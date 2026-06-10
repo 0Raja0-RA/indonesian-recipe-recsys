@@ -1,0 +1,16 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+
+
+# Logs
+logs/
+*.log
+
+# Config files
+.env
+.streamlit/secrets.toml
