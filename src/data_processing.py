@@ -250,6 +250,25 @@ def process_datasets():
     # Save the processed dataset
     merged_df.to_csv(OUTPUT_FILE, index=False)
     print(f"Processed dataset saved successfully to: {OUTPUT_FILE}")
+    
+    # Model Caching: Fit TF-IDF Vectorizer and export model and matrix
+    print("Fitting TF-IDF Vectorizer and exporting models...")
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    import joblib
+    
+    # Pastikan data ingredients terisi string kosong jika ada NaN
+    ingredients_clean = merged_df['Ingredients'].fillna("").astype(str)
+    
+    vectorizer = TfidfVectorizer(ngram_range=(1, 2))
+    tfidf_matrix = vectorizer.fit_transform(ingredients_clean)
+    
+    vectorizer_path = os.path.join(PROCESSED_DIR, "tfidf_vectorizer.pkl")
+    matrix_path = os.path.join(PROCESSED_DIR, "tfidf_matrix.pkl")
+    
+    joblib.dump(vectorizer, vectorizer_path)
+    joblib.dump(tfidf_matrix, matrix_path)
+    print(f"TF-IDF models saved successfully to: {PROCESSED_DIR}")
+    
     print(f"Final dataset summary:")
     print(f"- Rows: {len(merged_df)}")
     print(f"- Categories: {merged_df['category'].value_counts().to_dict()}")
