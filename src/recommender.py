@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from src.data_processing import clean_text
 
 class RecipeRecommender:
-    def __init__(self, dataset_path=r"c:\Project_2026\Indonesian-Recipe-Recsys\data\processed\merged_recipes.csv"):
+    def __init__(self, dataset_path="data/processed/merged_recipes.csv"):
         self.dataset_path = dataset_path
         self.df = None
         self.vectorizer = None

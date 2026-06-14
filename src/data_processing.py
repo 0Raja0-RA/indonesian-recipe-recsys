@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 
 # Direktori
-RAW_DIR = r"c:\Project_2026\Indonesian-Recipe-Recsys\data\raw"
-PROCESSED_DIR = r"c:\Project_2026\Indonesian-Recipe-Recsys\data\processed"
+RAW_DIR = "data/raw"
+PROCESSED_DIR = "data/processed"
 OUTPUT_FILE = os.path.join(PROCESSED_DIR, "merged_recipes.csv")
 
 # Stopwords indonesia
