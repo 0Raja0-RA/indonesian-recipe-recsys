@@ -1,6 +1,6 @@
 # 🍳 RasaNusantara
 
-[![Streamlit App](https://static.streamlit.io/badge_svg.svg)](https://rasa-nusantara.streamlit.app/)
+[![Status](https://img.shields.io/badge/Status-Online-brightgreen.svg)](https://rasa-nusantara.streamlit.app/)
 [![Python Version](https://img.shields.io/badge/python-3.12.5-orange.svg)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/framework-Streamlit-red.svg)](https://streamlit.io/)
 
@@ -33,7 +33,7 @@ Aplikasi ini telah di-deploy secara online di: **[rasa-nusantara.streamlit.app](
 ```mermaid
 graph TD
     A[8 Dataset Mentah CSV Cookpad] -->|Pipeline Preprocessing| B[data_processing.py]
-    B -->|1. Data Cleaning| B1[Hapus [Notitle] & Baris Kosong]
+    B -->|1. Data Cleaning| B1[Hapus 'Notitle' & Baris Kosong]
     B -->|2. Feature Extraction| B2[cooking_time, diet_type, spice_level]
     B -->|3. Text Processing| B3[Stopwords & Tokenization]
     B1 & B2 & B3 -->|Output| C[merged_recipes.csv & Model TF-IDF]
