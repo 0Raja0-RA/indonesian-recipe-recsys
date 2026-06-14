@@ -14,3 +14,6 @@ logs/
 # Config files
 .env
 .streamlit/secrets.toml
+
+# Experimental scratch folder
+scratch/
